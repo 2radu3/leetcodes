@@ -28,12 +28,9 @@ public:
             }
 
             carry = sum / 10;
-
             curr->next = new ListNode(sum % 10);
             curr = curr->next;
         }
-
         return aux->next;
-
     }
 };
