@@ -33,9 +33,7 @@ public:
             curr = curr->next;
         }
 
-        ListNode* result = aux->next;
-        delete aux;
-        return result;
+        return aux->next;
 
     }
 };
