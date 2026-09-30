@@ -3,11 +3,13 @@ class Solution:
         left, right = 0, len(height) - 1
         res = 0
         while left < right:
-            res = max((right - left) * min(height[left], height[right]), res)
+            vol = (right - left) * min(height[left], height[right])
             if height[left] < height[right]:
                 left += 1
             else:
                 right -= 1
+            if vol > res:
+                res = vol
         return res
             
         
