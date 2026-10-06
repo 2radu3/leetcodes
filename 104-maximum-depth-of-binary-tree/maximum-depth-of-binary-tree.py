@@ -9,14 +9,6 @@ class Solution:
         if not root:
             return 0
 
-        count = 0
-        q = collections.deque([root])
-        while q:
-            count += 1
-            for _ in range(len(q)):
-                node = q.popleft()
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-        return count
+        left_depth = self.maxDepth(root.left)
+        right_depth = self.maxDepth(root.right)
+        return 1 + max(left_depth, right_depth)
